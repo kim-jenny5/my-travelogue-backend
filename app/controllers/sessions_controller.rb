@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     end
 
     def show
-        if logged_in
+        if logged_in?
             render json: {user: current_user}
         else
             render json: {error: "User is not logged in/could not be found."}
