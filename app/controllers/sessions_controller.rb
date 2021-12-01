@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    skip_before_action :authorized, only: [:create]
+    # skip_before_action :authorized, only: [:create]
 
     def create
         user = User.find_by_email(user_login_params[:email])
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
         if logged_in
             render json: {user: current_user}
         else
-            render json: {error: "User could not be found"}
+            render json: {error: "User is not logged in/could not be found."}
         end
     end
 
