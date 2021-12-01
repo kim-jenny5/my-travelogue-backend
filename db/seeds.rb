@@ -6,10 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "date"
+
+# Users
 jenny = User.create(first_name: "Jenny", last_name: "Kim", email: "jennykimdev@gmail.com", password: "1234")
-# disney = Trip.create(name: "Disney World! ✨", location: "Orlando, FL", start_date: )
-# t.string :name
-# t.string :location
-# t.datetime :start_date
-# t.datetime :end_date
-# t.belongs_to :user, null: false, foreign_key: true
+
+# Trips
+disney = Trip.create(name: "Disney World! ✨", location: "Orlando, FL", start_date: DateTime.new(2022, 3, 21), end_date: DateTime.new(2022, 3, 27), user_id: 1)
+
+# Destinations/Places to visit
+mk = Destination.create(name: "Magic Kingdom Park", lat: 28.444741800767954, long: -81.57627915693652, trip_id: 1)
+animal = Destination.create(name: "Animal Kingdom Theme Park", lat: 28.360386024792135, long: -81.59132239264325)
+epcot = Destination.create(name: "Epcot", lat: 28.37502751689018, long: -81.54934412941975)
+hollywood = Destination.create(name: "Hollywood Studios", lat: 28.35896668518328, long: -81.5584667514894)
