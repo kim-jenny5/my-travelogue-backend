@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
         if user.save
             token = issue_token(user)
-            render json: {user: user, token: token}
+            render json: {user: user, jwt: token}
         else
             render json: {error: "User could not be created. Please try again."}
         end
