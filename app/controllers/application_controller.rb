@@ -1,4 +1,12 @@
 class ApplicationController < ActionController::API
+    # def jwt_key
+    #     ENV["SESSION_SECRET"]
+    # end
+
+    # def issue_token(user)
+    #     JWT.encode({user_id: user.id}, jwt_key, "HS256")
+    # end
+
     # before_action :authenticate
 
     # def authenticate
