@@ -6,4 +6,5 @@ class User < ApplicationRecord
     validates :last_name, presence: {message: "Last name is missing."}
     validates :email, uniqueness: {message: "This email is already registered."}, email: true
     
+    
 end
