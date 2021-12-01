@@ -1,4 +1,9 @@
 class TripSerializer < ActiveModel::Serializer
-  attributes :id, :name, :location, :start_date, :end_date
-  has_one :user
+  attributes :id, :name, :location, :start_date, :end_date, :user_id
+  # attributes :id, :name, :location, :start_date, :end_date
+  # has_one :user
+
+  def user_id
+    object.user.id
+  end
 end
