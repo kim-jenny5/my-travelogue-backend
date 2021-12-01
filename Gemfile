@@ -20,6 +20,8 @@ gem 'jwt', '~> 2.3'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'email_validator', require: 'email_validator/strict'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
