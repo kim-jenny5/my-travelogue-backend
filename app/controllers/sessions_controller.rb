@@ -7,12 +7,14 @@ class SessionsController < ApplicationController
     # end
 
     def create
-        byebug
         user = User.find_by_email(user_login_params[:email])
+        # byebug
         
         if user && user.authenticate(user_login_params[:password])
             token = issue_token(user)
-            render json: {user: user, jwt: token}
+            # byebug
+            # render json: {user: user, jwt: token}
+            render json: {user: UserSerializer.new(user), jwt: token}
         else
             render json: {error: "Username or password is incorrect."}
         end
