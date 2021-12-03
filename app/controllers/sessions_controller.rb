@@ -16,13 +16,16 @@ class SessionsController < ApplicationController
             # render json: {user: user, jwt: token}
             render json: {user: UserSerializer.new(user), jwt: token}
         else
-            render json: {error: "Username or password is incorrect."}
+            render json: {error: "Incorrect username or password."}
         end
     end
 
     def show
+        user = User.find_by(id: user_id)
+        # byebug
         if logged_in?
-            render json: {user: current_user}
+            # render json: {user: current_user}
+            render json: {user: user}
         else
             render json: {error: "User is not logged in/could not be found."}
         end
