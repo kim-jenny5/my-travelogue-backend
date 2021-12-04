@@ -12,7 +12,7 @@ require "date"
 jenny = User.create(first_name: "Jenny", last_name: "Kim", email: "jennykimdev@gmail.com", password: "1234")
 
 # Trips
-disney = Trip.create(name: "Disney World! ✨", location: "Orlando, FL", start_date: DateTime.new(2022, 3, 21), end_date: DateTime.new(2022, 3, 27), user_id: 1)
+disney = Trip.create(trip_name: "Disney World! ✨", start_date: Date.new(2022, 3, 21), end_date: Date.new(2022, 3, 27), user_id: 1)
 
 # Destinations/Places to visit
 mk = Destination.create(name: "Magic Kingdom Park", lat: 28.444741800767954, long: -81.57627915693652, trip_id: 1)
