@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
 
     def create
         user = User.find_by_email(session_params[:email])
+        # byebug
         
         if user && user.authenticate(session_params[:password])
             token = issue_token(user)
@@ -23,7 +24,6 @@ class SessionsController < ApplicationController
         # user = User.find_by(id: user_id)
         # byebug
         if logged_in?
-            # byebug
             # render json: {user: current_user}
             render json: current_user
             # render json: {user: user}
