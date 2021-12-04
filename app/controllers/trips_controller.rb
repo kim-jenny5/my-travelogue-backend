@@ -1,14 +1,13 @@
 class TripsController < ApplicationController
-    def index
-        trips = Trip.all
-        render json: trips
-    end
+    # def index
+    #     trips = Trip.all
+    #     render json: trips
+    # end
 
     def create
         trip = Trip.new(trip_params)
         if trip.save
             render json: trip
-            byebug
         else
             render json: {error: "Trip could not be created. Please try again."}
         end
