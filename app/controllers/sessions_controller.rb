@@ -7,10 +7,9 @@ class SessionsController < ApplicationController
     # end
 
     def create
-        user = User.find_by_email(user_login_params[:email])
-        # byebug
+        user = User.find_by_email(session_params[:email])
         
-        if user && user.authenticate(user_login_params[:password])
+        if user && user.authenticate(session_params[:password])
             token = issue_token(user)
             # byebug
             # render json: {user: user, jwt: token}
@@ -21,18 +20,20 @@ class SessionsController < ApplicationController
     end
 
     def show
-        user = User.find_by(id: user_id)
+        # user = User.find_by(id: user_id)
         # byebug
         if logged_in?
+            # byebug
             # render json: {user: current_user}
-            render json: {user: user}
+            render json: current_user
+            # render json: {user: user}
         else
             render json: {error: "User is not logged in/could not be found."}
         end
     end
 
     private
-    def user_login_params
+    def session_params
         params.require(:session).permit(:email, :password)
     end
 end

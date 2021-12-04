@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # resources :sessions
 
   post "/signup", to: "users#create"
-  # get "/login", to: "sessions#new"
+  get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   get "/authorized", to: "sessions#show"
   
