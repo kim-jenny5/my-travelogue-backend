@@ -12,9 +12,9 @@ require "date"
 jenny = User.create(first_name: "Jenny", last_name: "Kim", email: "jennykimdev@gmail.com", password: "1234")
 
 # Trips
-disney = Trip.create(trip_name: "Disney World! ✨", start_date: Date.new(2022, 3, 21), end_date: Date.new(2022, 3, 27), user_id: 1)
-philly = Trip.create(trip_name: "Philly with Andrew ❣️", start_date: Date.new(2021, 5, 7), end_date: Date.new(2021, 5, 9), user_id: 1)
-cottage = Trip.create(trip_name: "Cottage Getaway with Andrew 🍃", start_date: Date.new(2021, 8, 7), end_date: Date.new(2021, 8, 9), user_id: 1)
+disney = Trip.create(trip_name: "Disney World! ✨", start_date: DateTime.new(2022, 3, 21), end_date: DateTime.new(2022, 3, 27), user_id: 1)
+philly = Trip.create(trip_name: "Philly with Andrew ❣️", start_date: DateTime.new(2021, 5, 7), end_date: DateTime.new(2021, 5, 9), user_id: 1)
+cottage = Trip.create(trip_name: "Cottage Getaway with Andrew 🍃", start_date: DateTime.new(2021, 8, 7), end_date: DateTime.new(2021, 8, 9), user_id: 1)
 
 # Destinations/Places to visit
 # Disney
