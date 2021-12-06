@@ -6,6 +6,7 @@ class TripsController < ApplicationController
 
     def create
         trip = Trip.new(trip_params)
+        
         if trip.save
             render json: trip
         else
