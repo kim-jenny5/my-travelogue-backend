@@ -6,13 +6,16 @@ class TripsController < ApplicationController
 
     def create
         trip = Trip.new(trip_params)
-        
+
         if trip.save
             render json: trip
         else
             render json: {error: "Trip could not be created. Please try again."}
         end
+    end
 
+    def show
+        byebug
     end
 
     private
