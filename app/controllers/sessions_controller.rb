@@ -7,21 +7,23 @@ class SessionsController < ApplicationController
     # end
 
     def create
-        user = User.find_by_email(session_params[:email])
         # byebug
-        
-        if user && user.authenticate(session_params[:password])
+        # user = User.find_by_email(session_params[:email])
+        user = User.find_by_email(params[:email])
+
+        # if user && user.authenticate(session_params[:password])
+        if user && user.authenticate(params[:password])
             token = issue_token(user)
             # byebug
             # render json: {user: user, jwt: token}
             render json: {user: UserSerializer.new(user), jwt: token}
+            # render json: {user: user.to_json, jwt: token}
         else
             render json: {error: "Incorrect username or password."}
         end
     end
 
     def show
-        # user = User.find_by(id: user_id)
         # byebug
         if logged_in?
             # render json: {user: current_user}
@@ -32,8 +34,8 @@ class SessionsController < ApplicationController
         end
     end
 
-    private
-    def session_params
-        params.require(:session).permit(:email, :password)
-    end
+    # private
+    # def session_params
+    #     params.require(:session).permit(:email, :password)
+    # end
 end

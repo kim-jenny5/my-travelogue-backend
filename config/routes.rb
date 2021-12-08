@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   # resources :sessions
 
   post "/signup", to: "users#create"
-  get "/login", to: "sessions#new"
+  # get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   get "/authorized", to: "sessions#show"
   post "/newtrip", to: "trips#create"
+
+
+  # CHANGE THESE TWO
   # get "/dashboard", to: "users#show"
   get  "/dashboard", to: "trips#index"
-  
-  
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
