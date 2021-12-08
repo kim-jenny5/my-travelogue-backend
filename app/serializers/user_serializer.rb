@@ -1,7 +1,3 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :joined, :first_name, :last_name, :email
-
-  def joined
-    object.created_at.strftime("%B %e, %Y")
-  end
+  attributes :id, :joined, :first_name, :last_name, :email, :upcoming_trips, :past_trips
 end
