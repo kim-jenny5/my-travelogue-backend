@@ -12,6 +12,6 @@ Rails.application.routes.draw do
 
 
   # CHANGE THESE TWO
-  # get "/dashboard", to: "users#show"
-  get  "/dashboard", to: "trips#index"
+  get "/dashboard", to: "users#show"
+  # get  "/dashboard", to: "trips#index"
 end

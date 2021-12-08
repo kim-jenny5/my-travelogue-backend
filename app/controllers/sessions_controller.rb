@@ -26,6 +26,7 @@ class SessionsController < ApplicationController
     def show
         # byebug
         if logged_in?
+            # byebug
             # render json: {user: current_user}
             render json: current_user
             # render json: {user: user}

@@ -18,10 +18,10 @@ class UsersController < ApplicationController
         end
     end
 
-    # def show
-    #     # byebug
-    #     # user = User.find()
-    # end
+    def show
+        # byebug
+        # user = User.find()
+    end
 
     private
     # NOTE: PARAMS IS BEING WEIRD
