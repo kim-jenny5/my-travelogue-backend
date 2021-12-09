@@ -13,7 +13,7 @@ class User < ApplicationRecord
     
     def upcoming_trips
         self.trips.select do |trip|
-            trip.start_date > Date.current
+            trip.start_date >= Date.current
         end
     end
     
@@ -21,5 +21,17 @@ class User < ApplicationRecord
         self.trips.select do |trip|
             trip.start_date < Date.current
         end    
+    end
+
+    def first_upcoming_trip
+        dates = []
+
+        upcoming_trips.each do |trip|
+            dates << trip.start_date
+        end
+
+        upcoming_trips.find do |trip|
+            trip.start_date === dates.min
+        end
     end
 end
