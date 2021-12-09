@@ -34,4 +34,8 @@ class User < ApplicationRecord
             trip.start_date === dates.min
         end
     end
+
+    def daysLeftTill
+        (next_trip.start_date - Date.current).to_i + 1
+    end
 end
