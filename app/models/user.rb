@@ -23,14 +23,14 @@ class User < ApplicationRecord
         end    
     end
 
-    def first_upcoming_trip
+    def next_trip
         dates = []
 
         upcoming_trips.each do |trip|
             dates << trip.start_date
         end
 
-        upcoming_trips.find do |trip|
+        foundTrip = upcoming_trips.find do |trip|
             trip.start_date === dates.min
         end
     end
