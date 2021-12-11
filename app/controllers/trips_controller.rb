@@ -15,7 +15,8 @@ class TripsController < ApplicationController
     end
 
     def show
-        byebug
+        trip = Trip.find(params[:id])
+        render json: trip
     end
 
     private
