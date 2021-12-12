@@ -1,5 +1,5 @@
 class Place < ApplicationRecord
   belongs_to :trip
 
-  validates :first_name, presence: {message: "Place cannot be empty."}
+  validates :place_name, presence: {message: "Place name cannot be empty."}
 end

@@ -13,7 +13,8 @@ class PlacesController < ApplicationController
             if place.errors.messages
                 render json: {error: place.errors.messages}
             else
-            render json: {error: "Place could not be added. Please try again."}
+                render json: {error: "Place could not be added. Please try again."}
+            end
         end
     end
 
