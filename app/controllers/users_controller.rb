@@ -11,6 +11,7 @@ class UsersController < ApplicationController
         # user = User.new(params)
         byebug
         if user.save
+            # byebug
             token = issue_token(user)
             render json: {user: UserSerializer.new(user), jwt: token}
         else
@@ -18,15 +19,13 @@ class UsersController < ApplicationController
         end
     end
 
-    def show
-        # byebug
-        # user = User.find()
-    end
+    # def show
+    # end
 
     private
     # NOTE: PARAMS IS BEING WEIRD
     def user_params
-        # params.require(:user).permit(:first_name, :last_name, :email, :password)
-        params.permit(:first_name, :last_name, :email, :password)
+        params.require(:user).permit(:first_name, :last_name, :email, :password)
+        # params.permit(:first_name, :last_name, :email, :password)
     end
 end

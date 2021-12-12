@@ -1,18 +1,11 @@
 class SessionsController < ApplicationController
-    # skip_before_action :authorized, only: [:create]
-
-    # def new
-    #     user = User.new(user_login_params)
-    #     byebug
-    # end
-
     def create
         # byebug
-        # user = User.find_by_email(session_params[:email])
-        user = User.find_by_email(params[:email])
-
-        # if user && user.authenticate(session_params[:password])
-        if user && user.authenticate(params[:password])
+        user = User.find_by_email(session_params[:email])
+        # user = User.find_by_email(params[:email])
+        # byebug
+        if user && user.authenticate(session_params[:password])
+        # if user && user.authenticate(params[:password])
             token = issue_token(user)
             # byebug
             # render json: {user: user, jwt: token}
@@ -35,8 +28,8 @@ class SessionsController < ApplicationController
         end
     end
 
-    # private
-    # def session_params
-    #     params.require(:session).permit(:email, :password)
-    # end
+    private
+    def session_params
+        params.require(:session).permit(:email, :password)
+    end
 end
