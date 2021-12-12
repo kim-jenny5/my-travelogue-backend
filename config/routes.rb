@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#show"
   post "/trips/new", to: "trips#create"
   post "/places/new", to: "places#create"
-  # post "/trips/:id", to: "places#create"
 end
