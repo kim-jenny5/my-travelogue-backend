@@ -1,3 +1,3 @@
-class Destination < ApplicationRecord
-  belongs_to :trip
-end
+# class Destination < ApplicationRecord
+#   belongs_to :trip
+# end
