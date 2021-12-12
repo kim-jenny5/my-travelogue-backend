@@ -12,15 +12,23 @@ class User < ApplicationRecord
       end
     
     def upcoming_trips
-        self.trips.select do |trip|
+        upcoming = self.trips.select do |trip|
             trip.start_date >= Date.current
+        end
+
+        upcoming.sort_by do |trip|
+            trip.start_date
         end
     end
     
     def past_trips
-        self.trips.select do |trip|
+        past = self.trips.select do |trip|
             trip.start_date < Date.current
-        end    
+        end
+
+        past.sort_by do |trip|
+            trip.start_date
+        end
     end
 
     def next_trip
