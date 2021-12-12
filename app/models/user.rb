@@ -26,9 +26,10 @@ class User < ApplicationRecord
             trip.start_date < Date.current
         end
 
-        past.sort_by do |trip|
-            trip.start_date
+        past.sort do |x, y|
+            y.start_date <=> x.start_date
         end
+
     end
 
     def next_trip
