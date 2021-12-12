@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-    def index
-        users = User.all
-        render json: users
-    end
+    # def index
+    #     users = User.all
+    #     render json: users
+    # end
 
     def create
         user = User.new(user_params)
@@ -15,8 +15,17 @@ class UsersController < ApplicationController
         end
     end
 
+    def show
+        user = User.find(params[:id])
+        if user
+            render json: user
+        else
+            render json: {error: "User could not be found."}
+        end
+    end
+
     private
-    
+
     def user_params
         params.require(:user).permit(:first_name, :last_name, :email, :password)
     end

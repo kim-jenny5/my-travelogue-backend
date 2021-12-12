@@ -16,7 +16,11 @@ class TripsController < ApplicationController
 
     def show
         trip = Trip.find(params[:id])
-        render json: trip
+        if trip
+            render json: trip
+        else
+            render json: {error: "Trip could not be found."}
+        end
     end
 
     # def edit

@@ -8,6 +8,12 @@ class Trip < ApplicationRecord
 
   def days_left_till
     # (self.start_date - Date.current).to_i + 1
-    (self.start_date - Date.current).to_i
+    count = (self.start_date - Date.current).to_i
+
+    if count < 0
+      return "N/A"
+    else 
+      return count
+    end
   end
 end
