@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get "/authorized", to: "sessions#show"
   post "/trips/new", to: "trips#create"
   post "/trips/:id", to: "places#create"
-  
+  post "/places/new", to: "places#create"
+
 
   # CHANGE THESE TWO
   get "/dashboard", to: "users#show"
