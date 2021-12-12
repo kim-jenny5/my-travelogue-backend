@@ -6,10 +6,9 @@ class UsersController < ApplicationController
     end
 
     def create
-        # byebug
         user = User.new(user_params)
         # user = User.new(params)
-        byebug
+        # byebug
         if user.save
             # byebug
             token = issue_token(user)
