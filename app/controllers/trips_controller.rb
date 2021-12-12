@@ -19,13 +19,13 @@ class TripsController < ApplicationController
         render json: trip
     end
 
-    def edit
-    end
+    # def edit
+    # end
 
-    def update
-        # trip = Trip.find(params[:id])
-        # render json: trip
-    end
+    # def update
+    #     # trip = Trip.find(params[:id])
+    #     # render json: trip
+    # end
 
     private
 

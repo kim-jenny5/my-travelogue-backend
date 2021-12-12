@@ -1,6 +1,6 @@
 class Trip < ApplicationRecord
   belongs_to :user
-  has_many :destinations
+  has_many :places
 
   # VALIDATE START_DATE AND END_DATE
   validates :start_date, presence: {message: "There must be a start date."}
