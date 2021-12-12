@@ -1,9 +1,4 @@
 class TripsController < ApplicationController
-    # def index
-    #     trips = Trip.all
-    #     render json: trips
-    # end
-
     def create
         trip = Trip.new(trip_params)
 
@@ -22,14 +17,6 @@ class TripsController < ApplicationController
             render json: {error: "Trip could not be found."}
         end
     end
-
-    # def edit
-    # end
-
-    # def update
-    #     # trip = Trip.find(params[:id])
-    #     # render json: trip
-    # end
 
     private
 

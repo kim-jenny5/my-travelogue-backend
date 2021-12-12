@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::API
-    # before_action :authorized
 
     def jwt_key
         Rails.application.credentials.jwt_key
@@ -20,9 +19,6 @@ class ApplicationController < ActionController::API
     def token
         request.headers["Authorization"]
     end
-    # def authorized
-    #     render json: {message: "Please log in."} unless logged_in?
-    # end
 
     def user_id
         decoded_token.first["user_id"]
