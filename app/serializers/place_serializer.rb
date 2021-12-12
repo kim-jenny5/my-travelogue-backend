@@ -1,4 +1,4 @@
 class PlaceSerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :id, :place_name
   has_one :trip
 end
