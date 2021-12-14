@@ -6,7 +6,7 @@ my travelogue is a single-page application where users can keep a log of their t
 
 ## Tech Stack
 
-The backend was created with Rails API and has been fully set up with user authentication, using the `bcrpyt` gem and JWT. The [frontend](https://github.com/kim-jenny5/tableau-dambiance-frontend) was done with React, JavaScript, and HTML, with the design being mostly done with CSS in addition to some MUI.
+The backend was created with Rails API and has been fully set up with user authentication, using the `bcrpyt` gem and JWT. The [frontend](https://github.com/kim-jenny5/my-travelogue-frontend) was done with React, JavaScript, and HTML, with the design being mostly done with CSS in addition to some MUI.
 
 ## Usage
 
