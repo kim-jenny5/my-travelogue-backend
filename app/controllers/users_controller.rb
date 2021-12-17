@@ -2,6 +2,10 @@ class UsersController < ApplicationController
     def index
         users = User.all
         render json: users
+
+        # if !users
+        #     render json: {message: "User "}
+        # end
     end
 
 
