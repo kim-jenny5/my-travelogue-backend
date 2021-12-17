@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :trips
   resources :users
 
+  root 'users#index'
+
   post "/signup", to: "users#create"
   post "/login", to: "sessions#create"
   get "/authorized", to: "sessions#show"
