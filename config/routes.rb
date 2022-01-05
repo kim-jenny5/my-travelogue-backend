@@ -13,3 +13,4 @@ Rails.application.routes.draw do
   post "/trips/new", to: "trips#create"
   post "/places/new", to: "places#create"
 end
+    
