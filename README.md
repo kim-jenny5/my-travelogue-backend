@@ -10,9 +10,9 @@ The backend was created with Rails API and has been fully set up with user authe
 
 ## Usage
 
-Live API is coming...
+If you'd like to view the live API, visit [here](https://my-travelogue.herokuapp.com/).
 
-In the meantime, to start up the API locally:
+Otherwise, to start up the API locally:
 
 1. Clone this repo
 2. Run `bundle` or `bundle install` to install the gems 💎
